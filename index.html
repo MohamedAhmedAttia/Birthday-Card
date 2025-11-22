@@ -1,0 +1,45 @@
+<!-- Index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/256/1077/1077035.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Happy Birthday</title></head>
+<body>
+  <!-- Main card wrapper -->
+  <div class="card">
+
+    <!-- Back side of the card (shows when flipped) -->
+    <div class="back">
+      <img decoding="async" src="images/birthday-card.png" alt="">
+    </div>
+
+    <!-- Front side of the card -->
+    <div class="front">
+      <img decoding="async" src="images/Birthday.jpg" alt="">
+    </div>
+    <div class="container">
+      <p id="head">Happy Birthday Eman</p>
+      <p>Your first digital birthday card
+        <span class="strikethrough">Handcrafted</span>
+        Handcoded from scratch just for you.
+      </p>
+
+      <p>Each day with you makes me thank god for this blessing</p>
+      <button id="playBtn">Click Me!!</button>
+      <audio id="bgMusic" src="happy-birthday-368842.mp3"></audio>
+    </div>
+  </div>
+ 
+</body>
+<script>
+    document.getElementById("playBtn").addEventListener("click", function() {
+        document.getElementById("bgMusic").play();
+    });
+    </script>
+</html>
