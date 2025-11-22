@@ -2,6 +2,7 @@
 
 /* Import Google Font */
 @import url("https://fonts.googleapis.com/css?family=Nobile:400italic,700italic");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
     overflow: hidden;
@@ -43,10 +44,10 @@ body {
 
 /* Main header text */
 .card .container #head {
-    font-family: 'Nobile', sans-serif;
-    font-size: 1em;
-    color: #000;
-    font-weight: 700;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.4em;
+    color: #b300b3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     margin-top: -30px;
     margin-bottom: 20px;
 }
