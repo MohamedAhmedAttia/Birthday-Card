@@ -9,11 +9,49 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Soft pink gradient background */
+    /* Soft pink gradient background - kept for default state */
     background: #f7d2f1;
     background: linear-gradient(90deg, rgba(247, 210, 241, 1) 0%, rgb(255, 198, 229) 50%);
     height: 100vh;
 }
+
+/* --- New Styles for Cat Background Animation --- */
+
+/* The image of the 9 dancing cats is used as a repeating background. */
+.cat-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Use the uploaded cat image as a repeating pattern */
+    background-image: url('images/cat-dance.jpeg'); 
+    background-repeat: repeat; 
+    background-size: 300px auto; /* Adjust size to show multiple cats */
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth fade in/out */
+    z-index: -1; /* Keep it behind the card by default */
+}
+
+/* Keyframe for the subtle background drift animation */
+@keyframes cat-drift {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 500px 500px; /* Moves the background pattern */
+    }
+}
+
+/* Class added by JS to start the animation */
+.cat-background.active {
+    opacity: 1; /* Fade in */
+    z-index: 10; /* Bring it above the default body background */
+    /* Apply the animation */
+    animation: cat-drift 20s linear infinite;
+}
+
+/* --- Existing Styles --- */
 
 /* Main card box */
 .card {
@@ -23,6 +61,8 @@ body {
     background-color: #e6f0e6;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     transform: rotate(-1deg);
+    /* Make sure the card is above the animated background */
+    z-index: 20; 
 }
 
 /* Inner text container */
@@ -145,6 +185,7 @@ body {
 #playBtn:active {
     transform: scale(0.95);
 }
+
 #confettiBtn {
     padding: 10px 20px;
     font-family: 'Nobile', sans-serif;
